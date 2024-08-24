@@ -1,23 +1,23 @@
-export const BOILERPLATE = {};
+export const ECHOES_OF_THE_ARCANE = {};
 
 /**
  * The set of Ability Scores used within the system.
  * @type {Object}
  */
-BOILERPLATE.abilities = {
-  str: 'BOILERPLATE.Ability.Str.long',
-  dex: 'BOILERPLATE.Ability.Dex.long',
-  con: 'BOILERPLATE.Ability.Con.long',
-  int: 'BOILERPLATE.Ability.Int.long',
-  wis: 'BOILERPLATE.Ability.Wis.long',
-  cha: 'BOILERPLATE.Ability.Cha.long',
+ECHOES_OF_THE_ARCANE.abilities = {
+  str: 'ECHOES_OF_THE_ARCANE.Ability.Str.long',
+  dex: 'ECHOES_OF_THE_ARCANE.Ability.Dex.long',
+  con: 'ECHOES_OF_THE_ARCANE.Ability.Con.long',
+  int: 'ECHOES_OF_THE_ARCANE.Ability.Int.long',
+  wis: 'ECHOES_OF_THE_ARCANE.Ability.Wis.long',
+  cha: 'ECHOES_OF_THE_ARCANE.Ability.Cha.long',
 };
 
-BOILERPLATE.abilityAbbreviations = {
-  str: 'BOILERPLATE.Ability.Str.abbr',
-  dex: 'BOILERPLATE.Ability.Dex.abbr',
-  con: 'BOILERPLATE.Ability.Con.abbr',
-  int: 'BOILERPLATE.Ability.Int.abbr',
-  wis: 'BOILERPLATE.Ability.Wis.abbr',
-  cha: 'BOILERPLATE.Ability.Cha.abbr',
+ECHOES_OF_THE_ARCANE.abilityAbbreviations = {
+  str: 'ECHOES_OF_THE_ARCANE.Ability.Str.abbr',
+  dex: 'ECHOES_OF_THE_ARCANE.Ability.Dex.abbr',
+  con: 'ECHOES_OF_THE_ARCANE.Ability.Con.abbr',
+  int: 'ECHOES_OF_THE_ARCANE.Ability.Int.abbr',
+  wis: 'ECHOES_OF_THE_ARCANE.Ability.Wis.abbr',
+  cha: 'ECHOES_OF_THE_ARCANE.Ability.Cha.abbr',
 };

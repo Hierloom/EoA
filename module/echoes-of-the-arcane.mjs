@@ -1,14 +1,12 @@
 // Import document classes.
-import { BoilerplateActor } from './documents/actor.mjs';
-import { BoilerplateItem } from './documents/item.mjs';
+import { EchoesOfTheArcaneActor } from './documents/actor.mjs';
+import { EchoesOfTheArcaneItem } from './documents/item.mjs';
 // Import sheet classes.
-import { BoilerplateActorSheet } from './sheets/actor-sheet.mjs';
-import { BoilerplateItemSheet } from './sheets/item-sheet.mjs';
+import { EchoesOfTheArcaneActorSheet } from './sheets/actor-sheet.mjs';
+import { EchoesOfTheArcaneItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
-import { BOILERPLATE } from './helpers/config.mjs';
-// Import DataModel classes
-import * as models from './data/_module.mjs';
+import { ECHOES_OF_THE_ARCANE } from './helpers/config.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -17,14 +15,14 @@ import * as models from './data/_module.mjs';
 Hooks.once('init', function () {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
-  game.boilerplate = {
-    BoilerplateActor,
-    BoilerplateItem,
+  game.echoesofthearcane = {
+    EchoesOfTheArcaneActor,
+    EchoesOfTheArcaneItem,
     rollItemMacro,
   };
 
   // Add custom constants for configuration.
-  CONFIG.BOILERPLATE = BOILERPLATE;
+  CONFIG.ECHOES_OF_THE_ARCANE = ECHOES_OF_THE_ARCANE;
 
   /**
    * Set an initiative formula for the system
@@ -35,22 +33,9 @@ Hooks.once('init', function () {
     decimals: 2,
   };
 
-  // Define custom Document and DataModel classes
-  CONFIG.Actor.documentClass = BoilerplateActor;
-
-  // Note that you don't need to declare a DataModel
-  // for the base actor/item classes - they are included
-  // with the Character/NPC as part of super.defineSchema()
-  CONFIG.Actor.dataModels = {
-    character: models.BoilerplateCharacter,
-    npc: models.BoilerplateNPC
-  }
-  CONFIG.Item.documentClass = BoilerplateItem;
-  CONFIG.Item.dataModels = {
-    item: models.BoilerplateItem,
-    feature: models.BoilerplateFeature,
-    spell: models.BoilerplateSpell
-  }
+  // Define custom Document classes
+  CONFIG.Actor.documentClass = EchoesOfTheArcaneActor;
+  CONFIG.Item.documentClass = EchoesOfTheArcaneItem;
 
   // Active Effects are never copied to the Actor,
   // but will still apply to the Actor from within the Item
@@ -59,14 +44,14 @@ Hooks.once('init', function () {
 
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet);
-  Actors.registerSheet('boilerplate', BoilerplateActorSheet, {
+  Actors.registerSheet('echoes-of-the-arcane', EchoesOfTheArcaneActorSheet, {
     makeDefault: true,
-    label: 'BOILERPLATE.SheetLabels.Actor',
+    label: 'ECHOES_OF_THE_ARCANE.SheetLabels.Actor',
   });
   Items.unregisterSheet('core', ItemSheet);
-  Items.registerSheet('boilerplate', BoilerplateItemSheet, {
+  Items.registerSheet('echoes-of-the-arcane', EchoesOfTheArcaneItemSheet, {
     makeDefault: true,
-    label: 'BOILERPLATE.SheetLabels.Item',
+    label: 'ECHOES_OF_THE_ARCANE.SheetLabels.Item',
   });
 
   // Preload Handlebars templates.
@@ -114,7 +99,7 @@ async function createItemMacro(data, slot) {
   const item = await Item.fromDropData(data);
 
   // Create the macro command using the uuid.
-  const command = `game.boilerplate.rollItemMacro("${data.uuid}");`;
+  const command = `game.echoesofthearcane.rollItemMacro("${data.uuid}");`;
   let macro = game.macros.find(
     (m) => m.name === item.name && m.command === command
   );
@@ -124,7 +109,7 @@ async function createItemMacro(data, slot) {
       type: 'script',
       img: item.img,
       command: command,
-      flags: { 'boilerplate.itemMacro': true },
+      flags: { 'echoes-of-the-arcane.itemMacro': true },
     });
   }
   game.user.assignHotbarMacro(macro, slot);
