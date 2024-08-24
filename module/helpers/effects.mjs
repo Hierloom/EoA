@@ -43,17 +43,17 @@ export function prepareActiveEffectCategories(effects) {
   const categories = {
     temporary: {
       type: 'temporary',
-      label: game.i18n.localize('ECHOES_OF_THE_ARCANE.Effect.Temporary'),
+      label: game.i18n.localize('EOA.Effect.Temporary'),
       effects: [],
     },
     passive: {
       type: 'passive',
-      label: game.i18n.localize('ECHOES_OF_THE_ARCANE.Effect.Passive'),
+      label: game.i18n.localize('EOA.Effect.Passive'),
       effects: [],
     },
     inactive: {
       type: 'inactive',
-      label: game.i18n.localize('ECHOES_OF_THE_ARCANE.Effect.Inactive'),
+      label: game.i18n.localize('EOA.Effect.Inactive'),
       effects: [],
     },
   };

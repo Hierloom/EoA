@@ -7,7 +7,7 @@ import {
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class EchoesOfTheArcaneItemSheet extends ItemSheet {
+export class EoAItemSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -65,8 +65,8 @@ export class EchoesOfTheArcaneItemSheet extends ItemSheet {
     context.system = itemData.system;
     context.flags = itemData.flags;
 
-    // Adding a pointer to CONFIG.ECHOES_OF_THE_ARCANE
-    context.config = CONFIG.ECHOES_OF_THE_ARCANE;
+    // Adding a pointer to CONFIG.EOA
+    context.config = CONFIG.EOA;
 
     // Prepare active effects for easier access
     context.effects = prepareActiveEffectCategories(this.item.effects);

@@ -7,7 +7,7 @@ import {
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class EchoesOfTheArcaneActorSheet extends ActorSheet {
+export class EoASheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -46,8 +46,8 @@ export class EchoesOfTheArcaneActorSheet extends ActorSheet {
     context.system = actorData.system;
     context.flags = actorData.flags;
 
-    // Adding a pointer to CONFIG.ECHOES_OF_THE_ARCANE
-    context.config = CONFIG.ECHOES_OF_THE_ARCANE;
+    // Adding a pointer to CONFIG.EOA
+    context.config = CONFIG.EOA;
 
     // Prepare character data and items.
     if (actorData.type == 'character') {

@@ -27,10 +27,10 @@
   "version": "0.0.2",
   "compatibility": {
     "minimum": 12,
-    "verified": "11.331"
+    "verified": "12.331"
   },
   "esmodules": [
-    "module/echoes-of-the-arcane.mjs"
+    "module/EoA.mjs"
   ],
   "styles": [
     "css/echoes-of-the-arcane.css"

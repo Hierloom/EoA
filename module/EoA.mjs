@@ -1,12 +1,12 @@
 // Import document classes.
-import { EchoesOfTheArcaneActor } from './documents/actor.mjs';
-import { EchoesOfTheArcaneItem } from './documents/item.mjs';
+import { EoAActor } from './documents/actor.mjs';
+import { EoAItem } from './documents/item.mjs';
 // Import sheet classes.
-import { EchoesOfTheArcaneActorSheet } from './sheets/actor-sheet.mjs';
-import { EchoesOfTheArcaneItemSheet } from './sheets/item-sheet.mjs';
+import { EoASheet } from './sheets/actor-sheet.mjs';
+import { EoAItemSheet } from './sheets/item-sheet.mjs';
 // Import helper/utility classes and constants.
 import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
-import { ECHOES_OF_THE_ARCANE } from './helpers/config.mjs';
+import { EOA } from './helpers/config.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -16,13 +16,13 @@ Hooks.once('init', function () {
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
   game.echoesofthearcane = {
-    EchoesOfTheArcaneActor,
-    EchoesOfTheArcaneItem,
+    EoAActor,
+    EoAItem,
     rollItemMacro,
   };
 
   // Add custom constants for configuration.
-  CONFIG.ECHOES_OF_THE_ARCANE = ECHOES_OF_THE_ARCANE;
+  CONFIG.EOA = EOA;
 
   /**
    * Set an initiative formula for the system
@@ -34,8 +34,8 @@ Hooks.once('init', function () {
   };
 
   // Define custom Document classes
-  CONFIG.Actor.documentClass = EchoesOfTheArcaneActor;
-  CONFIG.Item.documentClass = EchoesOfTheArcaneItem;
+  CONFIG.Actor.documentClass = EoAActor;
+  CONFIG.Item.documentClass = EoAItem;
 
   // Active Effects are never copied to the Actor,
   // but will still apply to the Actor from within the Item
@@ -44,14 +44,14 @@ Hooks.once('init', function () {
 
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet);
-  Actors.registerSheet('echoes-of-the-arcane', EchoesOfTheArcaneActorSheet, {
+  Actors.registerSheet('echoes-of-the-arcane', EoASheet, {
     makeDefault: true,
-    label: 'ECHOES_OF_THE_ARCANE.SheetLabels.Actor',
+    label: 'EOA.SheetLabels.Actor',
   });
   Items.unregisterSheet('core', ItemSheet);
-  Items.registerSheet('echoes-of-the-arcane', EchoesOfTheArcaneItemSheet, {
+  Items.registerSheet('echoes-of-the-arcane', EoAItemSheet, {
     makeDefault: true,
-    label: 'ECHOES_OF_THE_ARCANE.SheetLabels.Item',
+    label: 'EOA.SheetLabels.Item',
   });
 
   // Preload Handlebars templates.
