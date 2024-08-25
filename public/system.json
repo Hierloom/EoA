@@ -24,16 +24,16 @@
       "thumbnail": "systems/echoes-of-the-arcane/assets/anvil-impact.png"
     }
   ],
-  "version": "0.0.2",
+  "version": "0.0.4",
   "compatibility": {
     "minimum": 12,
     "verified": "12.331"
   },
   "esmodules": [
-    "module/EoA.mjs"
+    "eoa.mjs"
   ],
   "styles": [
-    "css/echoes-of-the-arcane.css"
+    "style.css"
   ],
   "languages": [
     {

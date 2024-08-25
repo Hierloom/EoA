@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "strict": true,
+        "esModuleInterop": true,
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "types": [
+            "@league-of-foundry-developers/foundry-vtt-types"
+        ],
+        "outDir": "dist",
+        "sourceMap": true,
+        "baseUrl": ".",
+        "paths": {
+            "module/*": [
+                "module/*"
+            ]
+        }
+    },
+    "include": [
+        "module/**/*.ts",
+        "src/**/*.ts",
+        "foundry-extensions.d.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

@@ -1,7 +1,7 @@
 import {
   onManageActiveEffect,
   prepareActiveEffectCategories,
-} from '../helpers/effects.mjs';
+} from '../helpers/effects.ts';
 
 /**
  * Extend the basic ItemSheet with some very simple modifications

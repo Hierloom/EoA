@@ -1,6 +1,6 @@
 {
   "name": "echoes-of-the-arcane",
-  "version": "2.0.0",
+  "version": "0.0.3",
   "description": "CSS compiler for the EchoesOfTheArcane system",
   "scripts": {
     "build": "sass src/scss/echoes-of-the-arcane.scss css/echoes-of-the-arcane.css --style=expanded --no-source-map",
@@ -13,6 +13,9 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "sass": "^1.53.0"
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
+    "prettier": "^3.3.3",
+    "sass": "^1.53.0",
+    "vite": "^5.4.2"
   }
 }
