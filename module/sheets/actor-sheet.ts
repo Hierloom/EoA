@@ -47,7 +47,7 @@ export class EoAActorSheet extends ActorSheet {
     context.flags = actorData.flags;
 
     // Adding a pointer to CONFIG.EOA
-    context.config = CONFIG.EOA;
+    context.config = CONFIG.EoA;
 
     // Prepare character data and items.
     if (actorData.type == 'character') {

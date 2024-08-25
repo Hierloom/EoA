@@ -1,3 +1,5 @@
+import { ActorData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs";
+
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
@@ -41,7 +43,7 @@ export class EoAActor extends Actor {
   /**
    * Prepare Character type specific data
    */
-  _prepareCharacterData(actorData) {
+  _prepareCharacterData(actorData: ActorData) {
     if (actorData.type !== 'character') return;
 
     // Make modifications to data here. For example:

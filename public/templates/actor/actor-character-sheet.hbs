@@ -124,29 +124,28 @@
                                     for="system.abilities.{{key}}.value"
                                     class="resource-label rollable flexlarge align-left"
                                     data-roll="d20+@abilities.{{key}}.mod"
-                                    data-label="{{localize
-                                        (lookup @root.config.abilities key)
-                                    }}"
-                                >{{localize
-                                        (lookup @root.config.abilities key)
-                                    }}</label>
+                                    data-label="{{localize (lookup @root.config.abilities key)}}"
+                                >
+                                {{ localize (lookup @root.config.abilities key) }}
+                                </label>
                                 <input
                                     type="text"
                                     name="system.abilities.{{key}}.value"
-                                    value="{{ability.value}}"
+                                    value="{{ ability.value }}"
                                     data-dtype="Number"
                                 />
                                 <span
                                     class="ability-mod rollable"
                                     data-roll="d20+@abilities.{{key}}.mod"
-                                    data-label="{{localize
-                                        (lookup @root.config.abilities key)
-                                    }}"
-                                >{{numberFormat
-                                        ability.mod
-                                        decimals=0
-                                        sign=true
-                                    }}</span>
+                                    data-label="{{ localize (lookup @root.config.abilities key) }}"
+                                >
+                                {{
+                                    numberFormat
+                                    ability.mod
+                                    decimals=0
+                                    sign=true
+                                }}
+                                </span>
                             </div>
                         {{/each}}
                     </div>
@@ -156,8 +155,7 @@
                 <section class="main grid-span-2">
                     {{! This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in
           module/helpers/templates.mjs }}
-                    <!-- prettier-ignore -->
-                    {{!--          {{> "systems/echoes-of-the-arcane/templates/actor/parts/actor-features.hbs"}} --}}
+                    {{> "systems/echoes-of-the-arcane/templates/actor/parts/actor-features.hbs"}}
                 </section>
 
             </section>
@@ -166,7 +164,8 @@
         {{! Biography Tab }}
         <div class="tab biography" data-group="primary" data-tab="description">
             {{! Editors must receive enriched text data from getData to properly handle rolls }}
-            {{editor
+            {{
+                editor
                 enrichedBiography
                 target="system.biography"
                 engine="prosemirror"
@@ -177,13 +176,11 @@
 
         {{! Owned Items Tab }}
         <div class="tab items" data-group="primary" data-tab="items">
-            <!-- prettier-ignore -->
             {{> "systems/echoes-of-the-arcane/templates/actor/parts/actor-items.hbs"}}
         </div>
 
         {{! Owned Spells Tab }}
         <div class="tab spells" data-group="primary" data-tab="spells">
-            <!-- prettier-ignore -->
              {{> "systems/echoes-of-the-arcane/templates/actor/parts/actor-spells.hbs"}}
         </div>
 
@@ -193,7 +190,7 @@
             data-group="primary"
             data-tab="effects"
         >
-            {{!--    {{> "systems/echoes-of-the-arcane/templates/actor/parts/actor-effects.hbs"}} --}}
+            {{> "systems/echoes-of-the-arcane/templates/actor/parts/actor-effects.hbs"}}
         </div>
 
     </section>

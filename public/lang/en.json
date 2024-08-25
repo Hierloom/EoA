@@ -24,6 +24,10 @@
       "Cha": {
         "long": "Charisma",
         "abbr": "cha"
+      },
+      "San": {
+        "long": "Sanity",
+        "abbr": "san"
       }
     },
     "SheetLabels": {
